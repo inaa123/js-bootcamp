@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>증감 연산자</title>
+    <script>
+        /*
+        증감(증가 / 감소) 연산자(함축식임)
+
+
+        
+        */
+
+        /*const a = 5;
+        ++a; 상수에 값을 변경하려고 해서 error*/
+
+        let a = 5;
+    //    ++a; // a = a + 1. 1을 더하거나 빼거나. 반복문에서 많이 쓰임. 
+    //   console.log(a)
+
+        //전위연산자 후위연산자
+        let b = a++; 
+        let c = ++a; 
+
+        console.log(b) //5  : 값을 넘기고 나서 계산식을 진행한다. b에 a를 던지고 +1 (6이 숨어있음)
+        console.log(c) //7  계산식을 진행하고 값을 넘긴다. a(숨어있던 6)에 +1을 더한다.
+
+        //보통 전위 연산자를 자주 사용하지만 때에 따라서 다르게 사용된다.
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

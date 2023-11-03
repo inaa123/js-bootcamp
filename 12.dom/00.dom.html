@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        dom
+        -html 문서 내에 있는 모든 요소들을 의미한다.
+        -페이지 내의 모든 html요소들을 컨트롤 할 수 있다.(컨트롤 할 수 있다 = 추적, 생성,변형, 삭제)
+        -페이지 내의 모든 css요소들을 컨틀로 할 수 있다.
+        -페이지 내의 모든 요소에 이벤트를 적용할 수 있다.
+        */
+        
+        
+        window.onload = function(){
+            //dom접근 내가 선택하는 객체가 id인지 클래스아이디인지, 태그인지 정확하게 인지해야한다.
+            //스크립트는 내가 어떤 태그를 선택하는지에 따라 명령어가 달라진다.
+            let a = document.getElementById('text'); //text란 아이디 찾는다.
+            let b = document.getElementsByClassName('text'); //이런애들이 있다고 참조?해주는 것이다.
+            let c = document.getElementsByClassName('text')[0]; //index 번호까지 넣어줘야 내가 필요한 요소를 뽑아낸다.
+            let d = document.getElementsByTagName('p')[3];
+            console.log(a); //null -> window.onload = function()안에 넣으면 잘 나온다.
+            console.log(b);
+            console.log(c);
+            console.log(d);
+
+            a.style.backgroundColor = 'gray'; // - 들어간건 카멜기법으로
+
+            
+            let e = document.querySelector('.text') // 여기선 식별자를 넣어줘야한다.
+            //document.querySelector는 중복 선택자일 경우 항상 첫 요소만 선택한다. (단일 선택을 기준으로 한다.)
+            e.style.color = 'pink';
+            let f = document.querySelectorAll('p')[0];
+            //document.querySelectorAll은 모든 요소들을 참조하며, 배열처럼 순번으로 저장한다.
+            //호출도 배열호출방식을 사용해야 한다.
+            f.style.color = 'green';
+
+            //querySelctor 를 더 많이 사용할것.
+
+
+           /*
+           dom요소에 스크립트가 접근할 때에는 순서나 선언에 유의해야한다.
+           1. dom 요소보다 스크립트가 먼저 로드되면 안된다.
+           (body아래에 script를 선언하거나, 혹은 window이벤트를 넣어서 지연시켜야 한다.)
+           2. 선택자에 따라 인덱스를 추갛나느 경우가 생긴다.
+           (id는 중복이 안되기 때문에 상관 없지만, class나 tag일 경우 반드시 index 번호가 포함되어야 한다.)
+           3. 스타일 적용은 카멜기법을 사용한다.
+           (background-color = backgroundColor 로 대체한다.)
+           
+           */
+        }
+
+
+      
+       
+    </script>
+</head>
+<body>
+    <p class="text">Lorem ipsum dolor sit amet.</p>
+    <p class="text">Lorem ipsum dolor sit amet.</p>
+    <p class="text">Lorem ipsum dolor sit amet.</p>
+    <p class="text">Lorem ipsum dolor sit amet.</p>
+    <p class="text">Lorem ipsum dolor sit amet.</p>
+    <p id="text">Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+
+    <!--
+    <script>
+        let a = document.getElementById('text'); //text란 아이디 찾는다.
+        console.log(a); //<p id="text">Lorem ipsum dolor sit amet.</p>
+    </script>
+    -->
+</body>
+</html>

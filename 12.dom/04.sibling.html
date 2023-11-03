@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>형제 요소 참조</title>
+    <script>
+        /*
+        형제 요소 탐색
+        같은 라인에 있는요소를 형제라고 하며,
+        하위는 자식
+        상위는 부모
+        */
+
+        window.onload = function(){
+            let my = document.querySelector('.child3'); //나 를 의미. 나를 기준으로 이전 요소(형제), 다음형제 찾을것
+
+            let prev = my.previousElementSibling;//요소만 탐색
+            let prev2 = my.previousSibling;//모든 노드를 탐색하므로 공백이나 텍스트가 나올수 있음
+
+            console.log(prev); //<li class="child2">child2</li>
+            console.log(prev2); 
+
+            let next = my.nextElementSibling;
+            console.log(next) //<li class="child4">child4</li>
+        }
+    </script>
+</head>
+<body>
+    <ul class="parent">
+        <li class="child1">child1</li>
+        <li class="child2">child2</li>
+        <li class="child3">child3</li>
+        <li class="child4">child4</li>
+        <li class="child5">child5</li>
+    </ul>
+</body>
+</html>

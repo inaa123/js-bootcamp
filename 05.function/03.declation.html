@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>declation</title>
+    <script>
+        /*
+        함수의 선언 방식
+        1. 함수 선언식 function name(){} //가장 기본적인 방식
+        2. 함수 표현식 const name = function(){} //선언은 let보다 const로 한다. 변수에다 넣어서 사용.(리액트에서 많이 사용)
+        3. 생성자 함수 const name = new funcion(){} // new도 하나의 메서드
+        4. 화살표 함수 function name = () => {} es6에 새로 추가된 문법이다.
+        5. 즉시 실행 함수 (function(){})() // 즉시 실행 조건. 함수명 넣지않고 바로 function넣어서 실행 (많이 사용X, 일회용함수 일 때 사용)
+        */
+
+        //CASE1
+        function sum(a,b){
+            return a + b;
+        }
+        console.log(sum(1,2));
+
+        //case2
+        const sum02 = function(a,b){
+            return a * b;
+        }
+        console.log(sum02(5,3));
+
+        /*
+        const sum02 = function calc(a,b){ 함
+            return a * b;
+        }
+        console.log(calc(5,3)); //calc로 함수를 호출할 수 없다. 변수로 호출 해야 함.
+
+        함수 표현식은 변수명으로만 호출해야 하며, 함수에 넣은 이름은 넣어도 되지만, 아무런 기능을 하지 않는다.
+        그래서 함수이름으로 호출 시 에러
+        */
+
+        //CASE3
+        const User = new function(){
+            this.name = 'abc';
+            this.job = '강사';
+            //생성자 함수에서 this는 생성자를 뜻한다. 즉 this.name은  User.name이 this로 바뀐것.
+        } //생성자 함수는 일반함수와 구별하기 위해서 생성자 함수는 대문자로 시작한다.
+        console.log(User);  //객체형식
+        console.log(User.job); //객체중 하나를 뽑아서
+        //생성자 함수는 내용을 object로 관리한다. 
+
+        //case4 화살표함수는 나중에 es6배우면서 자세히 공부할 것.여기선 X
+
+        //case5
+        (function items(){
+            let a = 4;
+            let b = 2;
+            return console.log(a * b);
+        }()); // 기명 즉시 실행 함수. items이름은 아무 의미X
+
+        //items(); 호출 X
+
+        (function(){
+            let a = 1;
+            let b = 5;
+            return console.log(a * b);
+        }()); //익명 즉시 실행 함수. (이름X)
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

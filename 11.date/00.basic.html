@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        시간과 관련된 메서드들의 모임
+        기본적으로 모든 값들은 현재 시간을 기준으로 작성됨
+
+        
+        */
+        let date = new Date(); //현재 시간을 기준으로  date가ㅣ 생성됨
+        let date01 = new Date('2023/11/30/15:00:00') //직접 시간을 지정할 수도 있다.
+        console.log(date);
+        console.log(date01);
+
+        let year = date.getFullYear(); //이걸 더 많이 사용
+        let year01 = date.getYear(); //1900년도 에서 현재 연도를 뺀 값을 반환한다.
+        let month = date.getMonth()+1; //월을 숫자로 반환하기 때문에 0부터 출력하므로, 값에 +1을 한다.
+        let days = date.getDate(); //일을 표시 (1부터 시작)
+        let day = date.getDay(); // 요일을 숫자로 반환(모든 요일은 일요일부터 0으로 반환)
+
+        let time = date.getHours(); // 시간을 반환하고 24시간을 기준으로 함
+        let min = date.getMinutes(); //분을 반환
+        let sec = date.getSeconds(); // 초를 반환
+        let miSec = date.getMilliseconds(); //1초를 밀리세컨 단위로 반환 (0~999ms)
+        let times = date.getTime(); //1970년도부터 현재까지의 시간을  ms단위로 표시
+        console.log(year);
+        console.log(year01);
+        console.log(month);
+        console.log(days);
+        console.log(day);
+        console.log(time);
+        console.log(min);
+        console.log(sec);
+        console.log(miSec);
+        console.log(times);
+
+        /*
+        매개변수가 없는 경우 현재 시간을 표시해주며
+        
+        */
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

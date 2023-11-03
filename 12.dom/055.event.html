@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트</title>
+    <script>
+        window.onload = function(){
+            let text = document.querySelector('.text');
+            let text02 = document.querySelector('.text02');
+
+            let btn = document.querySelector('.btn');
+
+            /*
+            text.addEventListener('mouseover',function(){
+                text.style.color = 'coral';
+                text.style.backgroundColor = 'pink';
+            })
+            text.addEventListener('mouseout',function(){
+                text.style.color = 'black';
+                text.style.backgroundColor = 'transparent';
+            })
+            */
+
+            //text에 여러 이벤트 걸고 싶을 때
+            text.onmouseover = function(){
+                text.style.color = 'red';
+            }
+            text.onclick = function(){
+                console.log('ee')
+                 text.style.color = 'coral';
+            }
+            text.onmouseout = function(){
+                text.style.color='black';
+            }
+            //on이벤트는 중첩이 안됨. 원래라면 덮어쓰여져야하는데.. 여기선 다됨..
+            //그래서 여러개 이벤트 쓸 때는 addEventListener를 써서 이벤트 한번에 등록한다.
+            /*
+            btn.addEventListener('click', textColor);
+
+            function textColor(){ // 함수가 여러군데에서 사용될 경우 따로 만들기도 한다.
+                
+                text02.style.color = 'coral';
+            }
+            */
+        }
+    </script>
+</head>
+<body>
+    <p onClick='this.style.color="red"'>text</p>
+    <p class="text">Lorem ipsum dolor sit amet.</p>
+    <p class="text02">Lorem ipsum dolor sit amet consectetur, </p>
+
+    <button class="btn">click!</button>
+</body>
+</html>

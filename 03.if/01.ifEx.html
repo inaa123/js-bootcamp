@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        점수 계산
+        
+        조건1. 국어점수와 영어점수 '둘 다' 90점 이상 = A학점 (AND조건문)
+        조건2. 국어점수와 영어점수의 '합이' 170점 이상 = B학점 
+        조건3. 국어점수와 영어점수 '둘 중 하나'라도 90점이면 = C학점 (OR조건문)
+        나머지는 모두 D학점
+        점수는 직접 입력해도 되고 prompt로 입력해도 됨.
+        
+        */
+
+        let kor = prompt('국어점수를 입력하세요.(숫자만)');
+        let eng = prompt('영어점수만 입력하세요.(숫자만)');
+        
+        kor = parseInt(kor);
+        eng = parseInt(eng);
+
+        if(kor >= 90 && eng >= 90) {
+            console.log('A학점');
+        }else if(kor + eng >= 170) {
+            console.log('B학점');
+        }else if(kor >= 90 || eng >= 90){
+            console.log('C학점');
+        }else{
+            console.log('D학점');
+        }
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

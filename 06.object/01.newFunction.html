@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    /*
+    생성자 함수
+    객체 리터럴 방식과 비슷하지만 여러 개의 인스턴스를 관리해야 할 때엔 
+    객체 방식보다는 생성자 함수를 이용하는 것이 더 좋다.
+
+
+    */
+    //객체형식 : 재활용할 수 없다. 또 한명 만들려면 하나 더 만들어야 함. 
+    let person = {
+        name : 'wow',
+        age : 18, 
+        //나이가 20미만:미성년자 이상:성인 알려주기
+        calc : function(){
+            if(person.age < 20){
+                console.log(person.name + '은 미성년자입니다.');
+            }else{
+                console.log(person.name + '은 성인입니다.');
+            }
+        }
+    }
+    person.calc()
+    /*
+    여러개의 동일한 값을 가지고 할 때, 객체방식은 관리가 불편하다.
+    생성자 함수를 사용해서 인스턴스를 사용하는 방법을 쓴다.
+    */
+
+    function Person(name, age){ //생성자 = 공장 틀, 생성자는 구분하기 위해서 대문자로 시작
+        this.name = name;  //this 는 인스턴스 자체를 의미(새로 만드는 생성자를 this로)
+        this.age = age;
+        this.calc = function(){
+            if(age < 20){
+                console.log(name + '은 미성년자입니다.');
+            }else{
+                console.log(name + '은 성인입니다.');
+            }
+        }
+    }
+
+    let person01 = new Person('park', 40);
+    let person02 = new Person('lee', 16);
+    console.log(person01);
+    //필요할때마다 객체 만들 필요X, 생성자만 찍어내면 된다.
+
+    person01.calc();
+    person02.calc();
+    
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script> //script 하든지 아님 외부파일 만들어 연결하기?
+        /*
+        자바스크립트 변수
+
+        변수 : 특정한 이름으로 만들어진 저장소를 의미한다.
+        저장소에는 임의의 데이터값을 넣어서 수시로 그 데이터를 사용할 수 있도록 하는 명령어다.
+        (변수명엔 저장소의 이름이 대체된다.)
+
+        ec6(에크마스크립트 6버전) 이전에는 var라는 변수 하나만 존재했다.(변수의 종류 하나뿐)
+
+        var라는 변수는 심각한 문제점이 있어서 es6이후부터는 사용하지 않음.
+
+        var = 재선언도 가능하고, 값의 변경도 가능한 변수다. 오류발생야기
+
+        es6이후에는
+        let과 const를 사용한다. (let, const 변수의 종류, 원리는 좀 다름. let과 const위주로 사용할 것)
+
+        let = 재선언은 불가능하지만, 값은 변경 가능한 변수다.
+        const = 재선언도 불가능하고, 값의 변경도 불가능한 '상수'의 변수다.
+
+        
+        */
+        var a = 1; //var라는 변수 a를 만든다. a에 할당하는 값은 1이다.
+        var a = 2; // 변수의 재선언. a라는 변수 다 시 선언. a값 변경. 동일한 변수명 두개 이상 만들 수 없음. 
+        a = 3; //값의 변경(재할당) 
+        console.log(a); // 개발자도구 console에서만 확인 가능. 
+
+        console.log(b); //undefiend.
+        //null은 의도적으로 비운것. undefined는 값을 할당받지 못한 것, 변수는 인식했지만 그 안에 값은 할당되어있지않다.
+        var b = 1; 
+//변수의 선언은 3단계로 나눠진다.(변수 값이 할당되는 단계)
+        /*
+        1. 선언
+        - 변수의 실행과 / 변수에 등록을 한다. ex 어떤 주소값에 b라는 변수 등록할거야
+        2. 초기화
+        - 변수명 안에 값이 들어갈 공간을 만들기 위해 영역을 확보
+        이 단계에서 undefined를 출력한다.
+        3.값의 할당
+        - undefined로 초기화된 변수에 값이 배정
+
+        var는 1번과 2번을 동시에 실행한다.(1 - 2 - 3 순서대로 처리하지 않고, 2단계로 진행되는것: 1,2 - 3) 
+        변수를 등록하고 공간을 확보하기 위해 undefined로 초기화하기 때문에 변수가 선언되기 전에 값을 참조해도 에러가 발생하지 않지만 undefined를 출력한다.
+        그 후에 값을 할당한다.
+        위와 같은 현상을 변수 '호이스팅'이라고 한다. (그래서 let, const변수가 나옴) (let,const는 호이스팅을 막음)
+        ★★★기술면접 호이스팅 질문★★★
+        */
+
+        //console.log(aa); 00.var.html:38 Uncaught ReferenceError: Cannot access 'aa' before initialization
+        let aa=123;
+        console.log(aa);
+        //let aa = 456; Uncaught SyntaxError: Identifier 'aa' has already been declared
+        aa = 456; //값의 재할당만 가능. 재선언아님!!!! 다름!!!
+        console.log(aa);
+
+        //console.log(c); // Uncaught ReferenceError: Cannot access 'c' before initialization 값 (미리) 참조 안됨.
+        const c = 1;
+        //const c = 2; Uncaught SyntaxError: Identifier 'c' has already been declared 재선언X
+        // c = 2;Uncaught TypeError: Assignment to constant variable. 값 재할당X
+        console.log(c);
+        /*
+        
+        변수명을 지을 때에는 목적에 맞는 네이밍을 한다.
+        과도한 줄임말은 자제한다.(차라리 긴 문장이 낫다.)
+        직관적인 단어를 조합해서 사용한다.
+
+        let으로 변수명을 선언할 때에는 카멜기법(redColor)을 사용하고,
+        const로 변수명을 선언할 때에는 대문자와 언더바(RED_COLOR)를 사용하는 게 좋다. (권장사항, 구분하기 위함일 뿐)
+        
+
+
+        
+        */
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

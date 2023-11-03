@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body, html{
+            height: 100vh;
+            background: #dddddd;
+        }
+        .container{
+            width: 500px;
+            background: #ffffff;
+            padding: 24px;
+            border: solid 2px black;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+    </style>
+    <script>
+        //setInterval은 지정된 시간마다 함수를 반복실행함.
+        /*
+            setInterval(실행함수, 시간(ms단위 생략)) //기본으로 ms단위로 생각하기 때문에 단위는 생략한다.
+            = 지정된 시간 마다 ()안에 코드들을 반복하는 함수
+            중복되지 않도록 제어할 수 있는 게 필요함. (중첩시키지 않도록)
+
+            clearInterval(함수명)  : 실행되고 있는 함수를 초기화하는 함수다.
+
+            setTimeout(실행함수, 시간(ms단위 생략)) = 지정된 시간이 경과하면 함수를 실행(1회성)
+
+            clearTimeout(함수명) : 실행되는 함수를 초기화해준다.
+        */
+
+        //function text(){
+        //    console.log('안녕하세요');
+        //}
+        //setTimeout(text, 2000); //몇초있다가
+        //setInterval(text, 1000); //반복할때
+
+        window.onload = function(){
+            const item = document.querySelector('input'); //값을 받아올 input
+            const btn = document.querySelector('.btn'); //계산을 시작할 버튼
+            const result = document.querySelector('.result');
+
+            let won = 0; //입력된 연봉을 받아올 변수(값을 정할 수 없기 때문에 0이라고 설정(초기화))
+            let secWon = 0; //1초에 받는 연봉을 받아올 변수
+            let timer; // 빈변수. setInterval을 담아줄 변수다.
+
+            btn.addEventListener('click', function(){
+                calc();
+            })
+
+            function calc(){
+                clearInterval(timer); //리셋
+                /*
+                setInterval과 setTimout은 이벤트가 중첩되는 성격을 가지고 있기 때문에 항상 이벤트를 시작함과 동시에 리셋시켜주는 clear가 있어야 한다.
+                */
+                won = parseInt(item.value)*10000; //input에 값은 모두 value에 저장되므로 값을 받아올 때에는 value를 받아온다. parseInt로 숫자로 만들고 만원 곱해서 연봉을 계산해줌
+                //연봉을 일로 일을 시간으로 시간을 분으로 분을 초로 쪼개야함 -> 1초에얼마
+                let time = 0; //최초로 시작할 시간
+                secWon = won / 365 / 24 / 60 / 60;
+                //금액 / 일 / 시/ 분/ 초 : 365일-일당 24-시급 60-분급 60-초급
+                console.log(secWon)
+                timer = setInterval(function(){
+                    time++;
+                    result.innerHTML = '당신은 ' + time + '초에' +parseInt(time * secWon) + '원을 벌고 있습니다.';
+                }, 1000)
+                
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>연봉을 입력하세요(만원)</h1>
+        <input type="text" value="3000"> <!--사용자입력, 기본값3000만원-->
+        <button class="btn">계산하기!</button>
+
+        <p class="result">당신은 1초에 얼마를 벌까요?</p>
+    </div>
+</body>
+</html>

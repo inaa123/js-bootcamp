@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열 반복문</title>
+    <script>
+        /*
+        for in, for of는
+        객체의 배열에서 반복할 때 사용하는 메서드다.
+        for문보다는 늦게 만들어진 문법이다.
+
+        */
+
+        let car = ['현대', '기아', '쌍용', '벤츠', '볼보', '아우디'];
+
+        //for문으로 배열 출력하기
+        for(let i = 0; i < car.length; i++){
+            document.write(car[i]+'<br>');
+        }
+
+        //for in으로 출력하기
+        //for(let 변수명 in 배열명){ 실행코드 }
+
+        for(let i in car){ //배열 i에 카 배열을 담아서 배열을 호출할 것
+            document.write(car[i]+'<br>');
+        }
+        for(let i in car){
+            document.write(i + '<br>'); //index값들
+        }
+
+        //for of로 배열 호출하기
+        //for(let 변수명 of 배열명){실행코드}
+
+        for(let i of car){
+            //document.write(car[i]+'<br>'); //undefined
+            document.write(i + '<br>');
+        }
+
+        /*
+        for in과 for of 반복문은 무언가를 반복하는 것은 같지만,
+        '무엇을 반복하는 지'가 다르다.
+
+        for in은 반복 가능한 속성을 순서대로 반복한다.(index에 접근해서 index를 반복한다. 반복가능하다는 건 값이 아닌(값은 계속 바껴서) 순번임)
+        for of는 반복하도록 정의한 값을 반복(value를 반복한다.)
+
+        //for in은 객체를 반복할 때, for of는 배열을 반복할 때 많이 사용한다.
+
+        */
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

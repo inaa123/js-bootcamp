@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        string 문자열 타입(텍스트)
+        텍스트는 보통 ''나 ""안에 텍스트를 넣어서 사용한다. 일반적으로 ''를 많이 사용
+        원시형은 보통 변경 불가능한 값을 의미한다.
+
+
+        */
+
+        let text = 'string'; //데이터타입은 이렇게 만들어서 선언하면 됨.
+        text = "문자열타입";
+         // ''와 ""구분해서 써야할 때가 있음
+        //text =  '작은따옴표 안에 영역을 감쌀 때에는 '큰 따옴표'를 써야 한다.'
+        text =  '작은따옴표 안에 영역을 감쌀 때에는 "큰 따옴표"를 써야 한다.' // ''와 ""를 번갈아가면서 써야함.
+        console.log(text);
+        console.log(typeof(text)); //string, 문자열타입임을 알려줌. 검사하고 싶은 변수의 타입을 알고 싶을 때 사용
+
+        let text02 = 'park';
+        text02 = 'jh';
+        console.log(text02);
+        text02[0] = 'p'; //  [0] 0은 순번
+        console.log(text02); // ph아닌 jh 그대로 출력. 바뀌지 않음
+        //문자열을 재할당에는 문제가 없지만 일부 문자는 변경되지 않는다.
+
+        let a = '안녕하세요 ' + '자바스크립트 시간입니다.'; //문자열의 연결은 연산자 '+'를 사용한다. -> 자동으로 문자 통합해줌.
+        console.log(a);
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

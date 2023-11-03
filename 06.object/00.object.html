@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object-객체</title>
+    <script>
+        /*
+        Object[객체]
+        자바스크립트는 모든 ㅇㅇ '객체'기반의 스크립트 언어다.
+        자바스크립트에서 원시타입을 제외한 모든 것들이 '객체'라고 한다.
+
+        객체는 키(key), 값(value)으로 구성된 일종의 property의 집합체이다.
+        property의 값은 자바스크립트에서 사용할 수 있는 모든 종류를 넣을 수 있다.
+        */
+
+        /*한 객체의 정보값을 원시형으로 저장할 때 변수의 종류가 너무 많아지고 관리도 어렵다.*/
+        let aaName = '에이에이';
+        let aaAge = '40';
+        let aaJob = '학원강사';
+        let aaGender = 'male';
+        //여러명일 경우 많으니 객체로 저장한다.
+
+        const aa = {
+            name : '에이에이',
+            age : 40,
+            job : '강사',
+            gender : 'male' //마지막엔 ,넣어도 되고 안넣어도 됨
+        }
+        console.log(aa);
+        console.log(aa.age);
+        console.log(aa.job);
+        aa.job = '회사원'; //const여도 값을 바꿀 수 있음. 객체면 키값을 바꾸지 않았기 때문에 값을 변경해도 아무 상관 없다고 판단하여 에러X, 
+        //즉 객체에서 CONST를 사용해도 키를 바꾸지않고 값만 바꾼다면 값을 바꿀 수 있다.
+        console.log(aa.job);
+
+        let a = 1;
+        let b = a; 
+        
+        a = 2;
+        console.log(a); //2
+        console.log(b);//1 변수가 복사된게 아니라 a의 값이 복사됐기 때문에 a값이 바껴도 b값이 변하진X
+
+        let person = aa; //object 복사
+        //console.log(person);
+        aa.age = 50; //원본의 나이를 바꾸면
+        console.log(person.age); // 복사한person의 나이도 바뀐다.
+        
+        person.name = 'bb';
+        console.log(aa.name);
+
+        /*
+        원시타입은 변수를 복사할 때 값 자체가 복사가 되므로 바뀌는 값에 대해서 서로 공유하지 않지만,
+        객체형 타입은 값이 아닌 저장소를 공유하기 때문에 값이 바뀌게 되면 서로 값이 바뀌게 된다. (저장되는 방식이 다르기 때문.)        
+        */
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

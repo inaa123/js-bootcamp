@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ballMoving1</title>
+
+  <style>
+  
+  	body{
+			font-size:9pt;		
+	}
+
+    #wrap{
+      width:600px; height:400px; position:absolute; left:50%; margin-left:-300px; top:200px; 
+    }		
+		
+	#panel{
+		width:600px;
+		height:300px;
+		border:1px solid #999;
+		position:relative;
+		margin-bottom:30px; 
+	}
+		
+	#bar{
+		position:absolute;
+		left:50px;
+		top:190px;
+		width:500px;
+		height:20px;
+		z-index:10;
+		
+		border-top:dotted 1px #999;
+	}
+		
+	#ball{
+		position:absolute;
+		left:50px;
+		top:105px;
+		width:80px;
+		height:80px;
+		
+	}
+		
+	#nav{
+		text-align:center;
+		width:600px;
+	}
+  
+  
+  </style>
+
+  <script>
+	/*
+	setInterval로 공 이동시키기
+
+	1. 시작 버튼을 누르면 공이 현재 위치에서 움직이기 시작
+	2. 공이 bar의 길이안에서만 왕복운동을 할 수 있도록 제어
+
+	3. 정지 버튼을 누르면 공이 멈춤
+	4. 다시 시작버튼을 누르면 현재 위치에서 재 시작
+	*/
+	
+	window.onload = function(){
+		// 선택자부터 잘 잡는 게 중요
+		const ball = document.querySelector('#ball');
+		const bar = document.querySelector('#bar');
+		const startBtn = document.querySelector('#start_btn');
+		const stopBtn = document.querySelector('#stop_btn');
+
+		//panel안에서 공이 얼마나 떨어져 있는지 (공의 현재위치)
+		let startX = ball.offsetLeft; //공이 처음 시작할 위치 왼쪽에서 얼마나 떨어져있는지
+		let endX = bar.offsetWidth;
+		//offsetWidth = width값 반환. end점 구함
+		console.log(endX);
+		let currentX = startX; //공이 이동할 위치값을 담을 변수. 변해질 값
+		let stepX = 3; //공이 한 번에 움직일 값(px). 임의로 정함.
+		let timer; //setInterval에 담을 변수다.
+
+		let isPlay = true;
+
+		startBtn.addEventListener('click', function(){
+			//clearInterval(timer);
+			//timer = setInterval(ballMoving, 20);
+			if(isPlay){
+				//isPlay에 값을 생략하면 true를 반환한다.
+				timer = setInterval(ballMoving, 20);
+				isPlay = false; //clearInterval한거처럼 중복X되게
+			}
+		})
+		stopBtn.addEventListener('click', function(){
+			//clearInterval(timer);
+			if(!isPlay){ // isPlay === false (현재 true의 반대)
+				clearInterval(timer);
+				isPlay = true;
+			}
+		})
+
+		function ballMoving(){
+			currentX += stepX;
+			ball.style.left = currentX + 'px';
+
+			if(currentX >= endX){
+				stepX = -3;
+			}else if(currentX <= startX) {
+				stepX = 3;
+			}
+		}
+		
+
+
+	}
+	
+  </script>
+
+</head>
+<body>
+  
+  <div id="wrap"> 	
+		<div id="panel">
+			<div id="bar"> </div>
+			<div id="ball"> <!--ball이 bar안에서 움직여야 함-->
+				<img src="images/ball.png">
+			</div>
+		</div>
+		<div id="nav">
+			<button id="start_btn">시작</button>
+			<button id="stop_btn">멈춤</button>
+		</div>
+	</div>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math</title>
+    <script>
+        /*
+        Math.**
+        수학과 관련된 객체들을 말하며, 여러개의 세부 객체를 가지고 있다.
+        실제 숫자를 가지고 있는 속성과 메서드들을 수학적인 처리를 하도록 해주는 역할이다.
+        (숫자의 결과값으로 활용)
+
+        */
+
+        //let circle = Math.PI; //원주율
+        //console.log(circle);
+        let num = 3.141592653589793;
+
+        console.log(Math.floor(num)); //floor: 숫자를 내림. 소숫점기준 숫자를 내린다.(무조건)
+        console.log(Math.ceil(num)); //ceil : 숫자를 올림. 소숫점기준 무조건 올림
+        console.log(Math.round(num));//round : 숫자를 반올림.
+        //floor, ceil, round는 소숫점을 판단해서 정수만 반환
+
+        console.log(Math.abs(num)); //abs : 가지고 있는 숫자를 그대로 반환. (absolute의 약자로, 숫자의 절대값을 반환)
+
+        console.log(Math.max(10,50,70,6,3,1,124)); //124. 제시받은 값 중에서 가장 큰 값만 반환(최댓값)
+        console.log(Math.min(10,50,70,6,3,1,124)); //1. 제시받은 값 중에서 가장 작은 값만 반환(최솟값)
+        console.log(Math.pow(5,3)); //제곱근. Math.pow(x,y) -> x의 y제곱근 반환 
+
+        console.log(Math.random()); //0~1사이의 소숫점 값을 출력 *값은 최댓값, +값은 최솟값
+        console.log((Math.random()*10) + 1); //10.99~~~~~~  -> 소숫점을 버림
+        console.log(Math.floor(Math.random()*10)+1);
+        //floor와 random많이 사용할 것
+        /*
+        Math.random() + 1 -> 0.1 + 1 -> 1.1(최솟값)
+        */
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

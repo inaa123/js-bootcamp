@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String</title>
+    <script>
+        /*
+        String 문자열
+
+        */
+
+        //선언하는 방법
+        let text ='자바스크립트'; //변수로 선언하는 방법
+        let text02 = new String('자바스크립트'); //생성자 함수로 선언하는 방법
+
+        console.log(text); 
+        console.log(text02); //String배열처럼
+
+        console.log(text.length); //6 (자바스크립트 = 6글자)
+        console.log(text02.length); //6
+
+        console.log(text[0]); //자
+        console.log(text02[0]);//자 개별적으로 불러올 수도 있음
+        
+        console.log(text.charAt(1)); //바, 특정한 문자열의 위치를 반환하는 속성
+        console.log(text.charAt(1)); //생성자 함수로 생성한 문자열도 정상적으로 출력 (사용하는 덴 문제가 없다.)
+        
+
+        //기본적으로 문자열을 생성할 때에는 object보다 string형태를 사용하는 것이 더 좋다. 
+        //메모리적인 부분에서 차이가 많이 난다. (작은 문자열을 굳이 생성자함수로 만들 필요없다.)
+
+        let a = '안녕하세요. 자바스크립트 시간입니다.';
+        console.log(a.substr(0, 8)); //substr(시작index, 출력할 글자 수) => 배열의 splice와 비슷. 필요한 위치에서 뽑아줌
+        //주의할 점 : .(점)과 공백도 한 글자로 처리한다.
+
+        let birthDay = prompt('생년월일 8글자를 적어주세요'); // 19851024 -> 년,월,일 나눌 때 substr사용
+        let year = birthDay.substr(0, 4); //index와 글자수를 헷갈리지 않도록 하자!!!!!
+        let month = birthDay.substr(4, 2);
+        let day = birthDay.substr(6, 2);
+        
+        document.write(year + '연도' + month + '월' + day + '일');
+
+    </script> 
+</head>
+<body>
+    
+</body>
+</html>

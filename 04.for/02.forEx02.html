@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        1. 2~9단 까지 구구단을 작성
+        2. 중첩for문을 사용해서 새로운 단이 시작할때마다 1~9까지 곱하기
+        ex) 2x1 = 2가 나오도록
+        document.write로 출력
+        */
+        for(let i = 2; i <= 9; i++){
+            document.write(i + '단<br>');
+            for(let j = 1; j <= 9; j++){
+                let result = i * j;
+                document.write(i + ' x ' + j + ' = ' + result + '<br>');
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        switch
+        조건문의 한 종류
+
+        다른점
+        if문은 true와 false에 대해서 조건에 맞는 처리를 하는 함수
+        switch문은 조건당 하나의 표현식을 배당받아 else if처럼 쓰인다.
+        if문과는 다르게 딱 떨어지는 값만 넣을 수 있다.(조건문에 연산자가 들어올 수 없다.)
+        (if문처럼 연산자나 비교문X, 결과값을 else if처럼은 사용 가능)
+
+        가독성은 if문에 비해 높은 편이다.
+        
+        
+        */
+
+        let num = prompt('1~99까지의 값을 입력하세요.');
+
+        num = parseInt(num); //parseInt 안에 있는 숫자를 출력하는 요소(정수만). 정수 외의 값은 공백처리  ex : 7.4 -> 7, 그러나 약80 -> NaN, 바로 공백처리함...
+        console.log(num);
+
+        switch(num){ //case문이 else if역할을 하는 것. switch case문엔 break꼭 , default는 else같은
+            case 7 :
+                document.write('1등!!');
+                break;
+            case 19 :
+                document.write('2등!');
+                break;
+            case 42 :
+                document.write('3등!');
+                break;
+            case 68 :
+                document.write('4등!');
+                break;
+            default : 
+                document.write('꽝');
+                break;
+        }
+
+        /*
+        case : 조건문을 구분하는 명령어(if의 else if와 같음)
+        break : 현재 조건문을 만족하는 경우 명령어를 실행하다. break문을 만나면 해당 구문을 종료
+        default : 보통 마지막에 넣는 편이며, else와 같음
+        */
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

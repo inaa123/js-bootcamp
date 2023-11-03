@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            
+            let child = document.querySelector('.child');
+            //let parent = child.parentNode; //parent바로 나옴.
+            let parent = child.parentElement; //element 해도 같은 값 나옴. 부모요소는 나눌 필요 없다.
+            console.log(parent)
+
+            /*childNode에서는 공백을 반환하지만 parentNode는 공백을 반환하지 않는 이유는
+            설계에 대한 차이 때문이다.(로직의 차이)
+
+            childNode는 부모요소를 기준으로 내부에 모든 값을 참조하도록 하고 있는데
+            parentNode는 공백이 포함되지 않으므로 바로 객체의 참조가 가능
+            조상을 선택할때에는 부모의 부모를 타고 올라가는 방식으로 한다.
+            */
+        
+        }
+    </script>
+</head>
+<body>
+    <div class="parents">
+        <div class="parent">
+            <div class="child">child</div>
+        </div>
+    </div>
+</body>
+</html>

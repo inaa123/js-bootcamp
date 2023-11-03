@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        number 숫자형 타입
+        
+        다른 프로그래밍 언어와 다르게 실수, 소수, 정수를 구분하지 않고 하나의 숫자열 타입만 사용한다.
+        */
+
+        let a = 10; //정수
+        let b = 10.10; //실수
+        let c = '10'; //문자열(숫자X)
+        let d = -10; // 음의 정수
+        
+        let e = 1 + 1;
+        let f = '1' + 1; //문자열로 강제 항변환(타입 강제 변환)
+        let g = 1 + '1'// 문자열로 강제 항변환. (앞에 애를 따라 바뀌는거X. 다른 타입이 겹치면 문자열로 변환되는 게 기본이다.)
+        let h = 1 / '1';
+        let i = 1 / 'text'; // NaN Not A Number(산술적으로 연산이 불가능); 결과값이 숫자가 아님(숫자로 변환할 수 없음). nan은 연산이 잘못됨. undefined는 값을 받아올 수 없을 때
+
+        console.log(a, typeof(a));
+        console.log(b, typeof(b));
+        console.log(c, typeof(c));
+        console.log(d, typeof(d));
+        console.log(e); // 2
+        console.log(f); // 11
+        console.log(g); // 11
+        console.log(h); // 1
+        console.log(i, typeof(i)); // NaN, number
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
